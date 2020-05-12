@@ -1,0 +1,15 @@
+.page-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &__icon {
+    width: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

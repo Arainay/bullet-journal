@@ -1,0 +1,9 @@
+.result {
+
+  &__buttons {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 100px);
+    column-gap: 20px;
+  }
+}

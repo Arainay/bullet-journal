@@ -1,6 +1,35 @@
 .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
   &__header {
     margin: .5rem 0;
     text-transform: capitalize;
+  }
+
+  &__search {
+
+    &-input {
+      width: 100%;
+      border: none;
+      outline: none;
+      border-radius: .25rem;
+      background-color: #e4e4e4;
+      color: #000;
+    }
+  }
+
+  &__control {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  &__create {
+    width: 1.2rem;
+    cursor: pointer;
   }
 }

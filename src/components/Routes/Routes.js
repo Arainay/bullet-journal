@@ -1,6 +1,7 @@
 import React, { lazy } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { ROUTES } from '@app/helpers/constants';
+import './main.scss';
 
 const List = lazy(() => import(/* webpackPrefetch: true */ '@app/components/List'));
 const ResultsChart = lazy(() => import(/* webpackPrefetch: true */ '@app/components/ResultsChart'));
@@ -8,10 +9,10 @@ const ResultsChart = lazy(() => import(/* webpackPrefetch: true */ '@app/compone
 const Routes = () => (
   <main className="main">
     <Switch>
-      <Route path={ROUTES.TASKS}>
-        <List/>
+      <Route exact path={ROUTES.TASKS}>
+        <List type="Tasks"/>
       </Route>
-      <Route path={ROUTES.IDEAS}>
+      <Route exact path={ROUTES.IDEAS}>
         <List type="Ideas"/>
       </Route>
       <Route path={ROUTES.CALENDAR}>

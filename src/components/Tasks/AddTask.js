@@ -19,6 +19,17 @@ const AddTask = () => {
     addTask(task);
   };
 
+  const getCurrentDate = () => {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+
+    const toString = num => num.toString().length === 1 ? `0${num}` : num.toString();
+
+    return `${year}-${toString(month)}-${toString(day)}`;
+  };
+
   return (
     <Form className="add-task" onSubmit={add}>
       <fieldset className="add-task__fieldset add-task__header">
@@ -39,7 +50,7 @@ const AddTask = () => {
       <fieldset className="add-task__fieldset add-task__date">
         <TextField
           type="date"
-          defaultValue="2017-05-24"
+          defaultValue={getCurrentDate()}
           className="add-task__date-picker"
           InputLabelProps={{
             shrink: true,
@@ -51,7 +62,7 @@ const AddTask = () => {
         />
         <TextField
           type="date"
-          defaultValue="2017-05-25"
+          defaultValue={getCurrentDate()}
           className="add-task__date-picker"
           InputLabelProps={{
             shrink: true,

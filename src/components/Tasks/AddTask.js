@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Checkbox, FormControlLabel, TextField } from '@material-ui/core';
 import { TasksContext } from '@app/providers/Tasks';
 import Form, { Input } from '@app/components/Form';
+import './add-task.scss';
 
 const AddTask = () => {
   const { addTask } = useContext(TasksContext);
@@ -61,9 +62,11 @@ const AddTask = () => {
           id="finishTo"
         />
       </fieldset>
-      <Button type="submit" variant="contained" color="primary">
-        Create
-      </Button>
+      <fieldset className="add-task__fieldset add-task__controls">
+        <Button type="submit" variant="contained" color="primary">
+          Create
+        </Button>
+      </fieldset>
     </Form>
   );
 };

@@ -5,7 +5,7 @@ import Svg from '@app/components/Svg';
 import createIcon from './assets/create.svg';
 import './list.scss';
 
-const List = ({ type = 'tasks' }) => {
+const List = ({ type = 'tasks', data }) => {
   const { pathname } = useLocation();
   const { push } = useHistory();
 
@@ -16,6 +16,8 @@ const List = ({ type = 'tasks' }) => {
   const search = event => {
     console.log(event.target['search'].value);
   };
+
+  console.log(data);
 
   return (
     <article className="list">

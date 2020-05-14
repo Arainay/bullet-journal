@@ -1,5 +1,7 @@
 export const STATUSES = {
   COMPLETED: 'completed',
   PENDING: 'pending',
-  REMAINING: 'remaining'
+  MIGRATED: 'migrated',
+  CANCELED: 'canceled',
+  IMPORTANT: 'important'
 };

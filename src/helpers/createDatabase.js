@@ -18,6 +18,7 @@ export default function() {
       taskStore.createIndex('startDate', 'startDate');
       taskStore.createIndex('endDate', 'endDate');
       taskStore.createIndex('createdAt', 'createdAt');
+      taskStore.createIndex('important', 'important');
 
       ideaStore.createIndex('name', 'name');
       ideaStore.createIndex('status', 'status');

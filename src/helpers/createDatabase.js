@@ -15,11 +15,14 @@ export default function() {
       taskStore.createIndex('name', 'name');
       taskStore.createIndex('status', 'status');
       taskStore.createIndex('text', 'text');
-      taskStore.createIndex('date', 'date');
+      taskStore.createIndex('startDate', 'startDate');
+      taskStore.createIndex('endDate', 'endDate');
+      taskStore.createIndex('createdAt', 'createdAt');
 
       ideaStore.createIndex('name', 'name');
+      ideaStore.createIndex('status', 'status');
       ideaStore.createIndex('text', 'text');
-      ideaStore.createIndex('date', 'date');
+      ideaStore.createIndex('createdAt', 'createdAt');
     }
   });
 }

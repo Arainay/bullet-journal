@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Button, Checkbox, FormControlLabel, TextField } from '@material-ui/core';
+import { ROUTES } from '@app/helpers/constants';
 import { TasksContext } from '@app/providers/Tasks';
 import Form, { Input } from '@app/components/Form';
 import './add-task.scss';
@@ -7,7 +9,9 @@ import './add-task.scss';
 const AddTask = () => {
   const { addTask } = useContext(TasksContext);
 
-  const add = event => {
+  const { push } = useHistory();
+
+  const add = async event => {
     const task = {
       name: event.target['name'].value,
       important: event.target['important'].checked,
@@ -16,7 +20,8 @@ const AddTask = () => {
       createdAt: Date.now()
     };
 
-    addTask(task);
+    await addTask(task);
+    push(ROUTES.TASKS);
   };
 
   const getCurrentDate = () => {

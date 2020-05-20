@@ -14,10 +14,17 @@ const TasksProvider = ({ children }) => {
 
   const getPendingTasks = () => tasks.filter(item => item.status === STATUSES.PENDING);
 
-  const getRemainingTasks = () => tasks.filter(item => item.status === STATUSES.REMAINING);
+  const getMigratedTasks = () => tasks.filter(item => item.status === STATUSES.MIGRATED);
+
+  const getImportantTasks = () => tasks.filter(item => item.status === STATUSES.IMPORTANT);
+
+  const getCanceledTasks = () => tasks.filter(item => item.status === STATUSES.CANCELED);
 
   const addTask = task => {
-    setTasks(tasks => [...tasks, task]);
+    taskService.addTask(task)
+      .then(() => {
+        setTasks(tasks => [...tasks, task]);
+      });
   };
 
   const updateTask = task => {
@@ -57,7 +64,9 @@ const TasksProvider = ({ children }) => {
         getTasks,
         getCompletedTasks,
         getPendingTasks,
-        getRemainingTasks,
+        getMigratedTasks,
+        getImportantTasks,
+        getCanceledTasks,
         addTask,
         updateTask,
         deleteTask
